@@ -1,5 +1,5 @@
-grpcio==1.42.0
-protobuf==3.20.3
-python-dotenv==1.0.0
-torch==2.0
-torchvision==0.15.0
+grpcio
+protobuf
+python-dotenv
+torch
+torchvision
