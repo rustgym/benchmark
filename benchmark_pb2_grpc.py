@@ -14,10 +14,10 @@ class BenchmarkServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetPrograms = channel.unary_unary(
-                '/benchmark.BenchmarkService/GetPrograms',
-                request_serializer=benchmark__pb2.GetProgramsRequest.SerializeToString,
-                response_deserializer=benchmark__pb2.GetProgramsResponse.FromString,
+        self.GetProgram = channel.unary_unary(
+                '/benchmark.BenchmarkService/GetProgram',
+                request_serializer=benchmark__pb2.GetProgramRequest.SerializeToString,
+                response_deserializer=benchmark__pb2.GetProgramResponse.FromString,
                 )
         self.SetEpochTime = channel.unary_unary(
                 '/benchmark.BenchmarkService/SetEpochTime',
@@ -39,7 +39,7 @@ class BenchmarkServiceStub(object):
 class BenchmarkServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def GetPrograms(self, request, context):
+    def GetProgram(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -66,10 +66,10 @@ class BenchmarkServiceServicer(object):
 
 def add_BenchmarkServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetPrograms': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetPrograms,
-                    request_deserializer=benchmark__pb2.GetProgramsRequest.FromString,
-                    response_serializer=benchmark__pb2.GetProgramsResponse.SerializeToString,
+            'GetProgram': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetProgram,
+                    request_deserializer=benchmark__pb2.GetProgramRequest.FromString,
+                    response_serializer=benchmark__pb2.GetProgramResponse.SerializeToString,
             ),
             'SetEpochTime': grpc.unary_unary_rpc_method_handler(
                     servicer.SetEpochTime,
@@ -97,7 +97,7 @@ class BenchmarkService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetPrograms(request,
+    def GetProgram(request,
             target,
             options=(),
             channel_credentials=None,
@@ -107,9 +107,9 @@ class BenchmarkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/benchmark.BenchmarkService/GetPrograms',
-            benchmark__pb2.GetProgramsRequest.SerializeToString,
-            benchmark__pb2.GetProgramsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/benchmark.BenchmarkService/GetProgram',
+            benchmark__pb2.GetProgramRequest.SerializeToString,
+            benchmark__pb2.GetProgramResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

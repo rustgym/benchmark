@@ -17,8 +17,8 @@ class Benchmark:
     ):
         channel = grpc.secure_channel(target, grpc.ssl_channel_credentials())
         self.stub = benchmark_pb2_grpc.BenchmarkServiceStub(channel)
-        self.machine = machine
         self.program = program
+        self.machine = machine
         self.start_time = int(time.time())
 
     def SetEpochTime(self, epoch_id):
@@ -26,8 +26,8 @@ class Benchmark:
         seconds = end_time - self.start_time
         self.stub.SetEpochTime(
             benchmark_pb2.SetEpochTimeRequest(
-                machine=self.machine,
                 program=self.program,
+                machine=self.machine,
                 epoch_id=epoch_id,
                 seconds=seconds,
             )

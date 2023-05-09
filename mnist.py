@@ -102,8 +102,7 @@ class Args:
 def main():
     # Training settings
     args = Args()
-    print(args.no_cuda)
-
+    print(args)
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     use_mps = not args.no_mps and torch.backends.mps.is_available()
 
