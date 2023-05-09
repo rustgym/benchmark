@@ -2,11 +2,20 @@ import benchmark_pb2_grpc
 import benchmark_pb2
 import grpc
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Benchmark:
-    def __init__(self, machine, program, target):
-        channel = grpc.insecure_channel(target)
+    def __init__(
+        self,
+        program,
+        machine=os.environ.get("MACHINE", "machine"),
+        target="backend.rustgym.com",
+    ):
+        channel = grpc.secure_channel(target, grpc.ssl_channel_credentials())
         self.stub = benchmark_pb2_grpc.BenchmarkServiceStub(channel)
         self.machine = machine
         self.program = program
