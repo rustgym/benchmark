@@ -19,10 +19,74 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0f\x62\x65nchmark.proto\x12\tbenchmark\"Z\n\x13SetEpochTimeRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x01(\t\x12\x10\n\x08\x65poch_id\x18\x03 \x01(\x03\x12\x0f\n\x07seconds\x18\x04 \x01(\x03\"\x16\n\x14SetEpochTimeResponse\"7\n\x13GetEpochTimeRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x03(\t\"[\n\x14GetEpochTimeResponse\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x01(\t\x12\x10\n\x08\x65poch_id\x18\x03 \x01(\x03\x12\x0f\n\x07seconds\x18\x04 \x01(\x03\"7\n\x13\x44\x65lEpochTimeRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x01(\t\"\x16\n\x14\x44\x65lEpochTimeResponse2\x8d\x02\n\x10\x42\x65nchmarkService\x12Q\n\x0cSetEpochTime\x12\x1e.benchmark.SetEpochTimeRequest\x1a\x1f.benchmark.SetEpochTimeResponse\"\x00\x12S\n\x0cGetEpochTime\x12\x1e.benchmark.GetEpochTimeRequest\x1a\x1f.benchmark.GetEpochTimeResponse\"\x00\x30\x01\x12Q\n\x0c\x44\x65lEpochTime\x12\x1e.benchmark.DelEpochTimeRequest\x1a\x1f.benchmark.DelEpochTimeResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0f\x62\x65nchmark.proto\x12\tbenchmark\"%\n\x12GetProgramsRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\"\'\n\x13GetProgramsResponse\x12\x10\n\x08programs\x18\x01 \x03(\t\"Z\n\x13SetEpochTimeRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x01(\t\x12\x10\n\x08\x65poch_id\x18\x03 \x01(\x03\x12\x0f\n\x07seconds\x18\x04 \x01(\x03\"\x16\n\x14SetEpochTimeResponse\"7\n\x13GetEpochTimeRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x03(\t\"[\n\x14GetEpochTimeResponse\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x01(\t\x12\x10\n\x08\x65poch_id\x18\x03 \x01(\x03\x12\x0f\n\x07seconds\x18\x04 \x01(\x03\"7\n\x13\x44\x65lEpochTimeRequest\x12\x0f\n\x07machine\x18\x01 \x01(\t\x12\x0f\n\x07program\x18\x02 \x01(\t\"\x16\n\x14\x44\x65lEpochTimeResponse2\xdd\x02\n\x10\x42\x65nchmarkService\x12N\n\x0bGetPrograms\x12\x1d.benchmark.GetProgramsRequest\x1a\x1e.benchmark.GetProgramsResponse\"\x00\x12Q\n\x0cSetEpochTime\x12\x1e.benchmark.SetEpochTimeRequest\x1a\x1f.benchmark.SetEpochTimeResponse\"\x00\x12S\n\x0cGetEpochTime\x12\x1e.benchmark.GetEpochTimeRequest\x1a\x1f.benchmark.GetEpochTimeResponse\"\x00\x30\x01\x12Q\n\x0c\x44\x65lEpochTime\x12\x1e.benchmark.DelEpochTimeRequest\x1a\x1f.benchmark.DelEpochTimeResponse\"\x00\x62\x06proto3'
 )
 
 
+
+
+_GETPROGRAMSREQUEST = _descriptor.Descriptor(
+  name='GetProgramsRequest',
+  full_name='benchmark.GetProgramsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='machine', full_name='benchmark.GetProgramsRequest.machine', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=30,
+  serialized_end=67,
+)
+
+
+_GETPROGRAMSRESPONSE = _descriptor.Descriptor(
+  name='GetProgramsResponse',
+  full_name='benchmark.GetProgramsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='programs', full_name='benchmark.GetProgramsResponse.programs', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=69,
+  serialized_end=108,
+)
 
 
 _SETEPOCHTIMEREQUEST = _descriptor.Descriptor(
@@ -73,8 +137,8 @@ _SETEPOCHTIMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30,
-  serialized_end=120,
+  serialized_start=110,
+  serialized_end=200,
 )
 
 
@@ -98,8 +162,8 @@ _SETEPOCHTIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=122,
-  serialized_end=144,
+  serialized_start=202,
+  serialized_end=224,
 )
 
 
@@ -137,8 +201,8 @@ _GETEPOCHTIMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=146,
-  serialized_end=201,
+  serialized_start=226,
+  serialized_end=281,
 )
 
 
@@ -190,8 +254,8 @@ _GETEPOCHTIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=203,
-  serialized_end=294,
+  serialized_start=283,
+  serialized_end=374,
 )
 
 
@@ -229,8 +293,8 @@ _DELEPOCHTIMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=351,
+  serialized_start=376,
+  serialized_end=431,
 )
 
 
@@ -254,10 +318,12 @@ _DELEPOCHTIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=353,
-  serialized_end=375,
+  serialized_start=433,
+  serialized_end=455,
 )
 
+DESCRIPTOR.message_types_by_name['GetProgramsRequest'] = _GETPROGRAMSREQUEST
+DESCRIPTOR.message_types_by_name['GetProgramsResponse'] = _GETPROGRAMSRESPONSE
 DESCRIPTOR.message_types_by_name['SetEpochTimeRequest'] = _SETEPOCHTIMEREQUEST
 DESCRIPTOR.message_types_by_name['SetEpochTimeResponse'] = _SETEPOCHTIMERESPONSE
 DESCRIPTOR.message_types_by_name['GetEpochTimeRequest'] = _GETEPOCHTIMEREQUEST
@@ -265,6 +331,20 @@ DESCRIPTOR.message_types_by_name['GetEpochTimeResponse'] = _GETEPOCHTIMERESPONSE
 DESCRIPTOR.message_types_by_name['DelEpochTimeRequest'] = _DELEPOCHTIMEREQUEST
 DESCRIPTOR.message_types_by_name['DelEpochTimeResponse'] = _DELEPOCHTIMERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+GetProgramsRequest = _reflection.GeneratedProtocolMessageType('GetProgramsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETPROGRAMSREQUEST,
+  '__module__' : 'benchmark_pb2'
+  # @@protoc_insertion_point(class_scope:benchmark.GetProgramsRequest)
+  })
+_sym_db.RegisterMessage(GetProgramsRequest)
+
+GetProgramsResponse = _reflection.GeneratedProtocolMessageType('GetProgramsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETPROGRAMSRESPONSE,
+  '__module__' : 'benchmark_pb2'
+  # @@protoc_insertion_point(class_scope:benchmark.GetProgramsResponse)
+  })
+_sym_db.RegisterMessage(GetProgramsResponse)
 
 SetEpochTimeRequest = _reflection.GeneratedProtocolMessageType('SetEpochTimeRequest', (_message.Message,), {
   'DESCRIPTOR' : _SETEPOCHTIMEREQUEST,
@@ -317,13 +397,23 @@ _BENCHMARKSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=378,
-  serialized_end=647,
+  serialized_start=458,
+  serialized_end=807,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='GetPrograms',
+    full_name='benchmark.BenchmarkService.GetPrograms',
+    index=0,
+    containing_service=None,
+    input_type=_GETPROGRAMSREQUEST,
+    output_type=_GETPROGRAMSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='SetEpochTime',
     full_name='benchmark.BenchmarkService.SetEpochTime',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_SETEPOCHTIMEREQUEST,
     output_type=_SETEPOCHTIMERESPONSE,
@@ -333,7 +423,7 @@ _BENCHMARKSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetEpochTime',
     full_name='benchmark.BenchmarkService.GetEpochTime',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_GETEPOCHTIMEREQUEST,
     output_type=_GETEPOCHTIMERESPONSE,
@@ -343,7 +433,7 @@ _BENCHMARKSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DelEpochTime',
     full_name='benchmark.BenchmarkService.DelEpochTime',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_DELEPOCHTIMEREQUEST,
     output_type=_DELEPOCHTIMERESPONSE,

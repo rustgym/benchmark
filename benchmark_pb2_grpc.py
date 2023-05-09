@@ -14,6 +14,11 @@ class BenchmarkServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.GetPrograms = channel.unary_unary(
+                '/benchmark.BenchmarkService/GetPrograms',
+                request_serializer=benchmark__pb2.GetProgramsRequest.SerializeToString,
+                response_deserializer=benchmark__pb2.GetProgramsResponse.FromString,
+                )
         self.SetEpochTime = channel.unary_unary(
                 '/benchmark.BenchmarkService/SetEpochTime',
                 request_serializer=benchmark__pb2.SetEpochTimeRequest.SerializeToString,
@@ -33,6 +38,12 @@ class BenchmarkServiceStub(object):
 
 class BenchmarkServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
+
+    def GetPrograms(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def SetEpochTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -55,6 +66,11 @@ class BenchmarkServiceServicer(object):
 
 def add_BenchmarkServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'GetPrograms': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPrograms,
+                    request_deserializer=benchmark__pb2.GetProgramsRequest.FromString,
+                    response_serializer=benchmark__pb2.GetProgramsResponse.SerializeToString,
+            ),
             'SetEpochTime': grpc.unary_unary_rpc_method_handler(
                     servicer.SetEpochTime,
                     request_deserializer=benchmark__pb2.SetEpochTimeRequest.FromString,
@@ -79,6 +95,23 @@ def add_BenchmarkServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class BenchmarkService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def GetPrograms(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/benchmark.BenchmarkService/GetPrograms',
+            benchmark__pb2.GetProgramsRequest.SerializeToString,
+            benchmark__pb2.GetProgramsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SetEpochTime(request,
